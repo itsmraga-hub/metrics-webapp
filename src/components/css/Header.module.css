@@ -1,0 +1,21 @@
+.Header {
+  width: 100%;
+  font-size: 2em;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header svg {
+  width: 1.5em;
+}
+
+.Header .HeaderDiv {
+  display: flex;
+  gap: 1em;
+}
+
+.Header .HeaderDiv svg {
+  width: 1.25em;
+}

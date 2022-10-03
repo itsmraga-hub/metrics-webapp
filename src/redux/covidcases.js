@@ -36,7 +36,26 @@ export const fetchsingleCountryInfo = createAsyncThunk(
       payload: data,
     })
   }
+);
+
+export const searchByCountry = (str) => (
+  {
+    type: SEARCH_BY_COUNTRY,
+    str,
+  }
 )
+
+export const searchImplementation = (state, str) => {
+  const len = str.length;
+
+  const cases = state.filter((country) => {
+    if (country.id.slice(0, len) === str) {
+      return country;
+    }
+  });
+  console.log(cases.length);
+  return cases;
+}
 
 const casesReducer = (state = [], action) => {
   switch(action.type) {
@@ -44,7 +63,9 @@ const casesReducer = (state = [], action) => {
       return [...action.payload];
     }
     case SEARCH_BY_COUNTRY: {
-      return [...action.payload]
+      const arr = state.map((obj) => ({...obj}));
+      const cases = searchImplementation(arr, action.str);
+      return [...cases];
     }
     default: {
       return state;

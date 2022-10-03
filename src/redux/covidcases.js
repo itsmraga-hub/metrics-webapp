@@ -1,8 +1,7 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const FETCH_CASES = 'metrics-hub/cases/FETCH_CASES';
 const SEARCH_BY_COUNTRY = 'SEARCH_BY_COUNTRY';
-
 
 export const fetchHomePageCases = createAsyncThunk(
   FETCH_CASES,
@@ -16,13 +15,13 @@ export const fetchHomePageCases = createAsyncThunk(
       payload.push({
         ...country.All,
         id,
-      })
-    })
+      });
+    });
     dispatch({
       type: FETCH_CASES,
       payload,
-    })
-  }
+    });
+  },
 );
 
 export const fetchsingleCountryInfo = createAsyncThunk(
@@ -30,12 +29,11 @@ export const fetchsingleCountryInfo = createAsyncThunk(
   async (args, { dispatch }) => {
     const response = await fetch('https://covid-api.mmediagroup.fr/v1/cases?country=India');
     const data = await response.json();
-    console.log(data);
     dispatch({
       type: SEARCH_BY_COUNTRY,
       payload: data,
-    })
-  }
+    });
+  },
 );
 
 export const searchByCountry = (str) => (
@@ -43,27 +41,22 @@ export const searchByCountry = (str) => (
     type: SEARCH_BY_COUNTRY,
     str,
   }
-)
+);
 
-export const searchImplementation = (state, str) => {
+export const searchImplementation = (arr, str) => {
   const len = str.length;
 
-  const cases = state.filter((country) => {
-    if (country.id.slice(0, len) === str) {
-      return country;
-    }
-  });
-  console.log(cases.length);
+  const cases = arr.filter((country) => (country.id.slice(0, len) === str));
   return cases;
-}
+};
 
 const casesReducer = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case FETCH_CASES: {
       return [...action.payload];
     }
     case SEARCH_BY_COUNTRY: {
-      const arr = state.map((obj) => ({...obj}));
+      const arr = state.map((obj) => ({ ...obj }));
       const cases = searchImplementation(arr, action.str);
       return [...cases];
     }
@@ -71,6 +64,6 @@ const casesReducer = (state = [], action) => {
       return state;
     }
   }
-}
+};
 
 export default casesReducer;

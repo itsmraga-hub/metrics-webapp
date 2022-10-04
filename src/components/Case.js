@@ -19,9 +19,6 @@ const Case = (props) => {
 
   return (
     <li className={style.Container}>
-      {/* <button type="button" id={id} onClick={handleClick}>
-        <i className="fa-solid fa-circle-chevron-right" id={id} />
-      </button> */}
       <Link to={{ pathname: `/country/${id}`, state: {} }}>
         <button type="button" id={id} onClick={handleClick}>
           <i className="fa-solid fa-circle-chevron-right" id={id} />

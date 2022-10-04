@@ -8,7 +8,7 @@ import Header from './Header';
 import Menu from './Menu';
 
 const Home = () => {
-  const cases = useSelector((state) => state.cases);
+  const { all } = useSelector((state) => state.cases);
 
   const [state, setState] = useState({
     value: '',
@@ -20,7 +20,7 @@ const Home = () => {
     const searchStr = str.charAt(0).toUpperCase() + str.slice(1);
     setState({
       value: e.target.value,
-      filteredCases: [...searchImplementation(cases, searchStr)],
+      filteredCases: [...searchImplementation(all, searchStr)],
     });
   };
 
@@ -37,7 +37,7 @@ const Home = () => {
           />
         ) : (
           <CasesContainer
-            cases={cases}
+            cases={all}
             value={state.value}
             handleChange={handleChange}
           />

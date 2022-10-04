@@ -1,23 +1,14 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Country from '../components/Country';
-import { fetchsingleCountryInfo } from '../redux/covidcases';
 
 const SingleCase = () => {
-  const params = useParams();
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchsingleCountryInfo(params.id));
-  });
+  const { filterCountry } = useSelector((state) => state.cases);
 
   return (
     <>
       <main>
         <h1>Hello there</h1>
-        <Country />
+        <Country country={filterCountry} />
       </main>
     </>
   );

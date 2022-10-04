@@ -3,6 +3,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const FETCH_CASES = 'metrics-hub/cases/FETCH_CASES';
 const SEARCH_BY_COUNTRY = 'SEARCH_BY_COUNTRY';
 
+const initialState = {
+  all: [],
+  filterCountry: {},
+};
+
 export const fetchHomePageCases = createAsyncThunk(
   FETCH_CASES,
   async (args, { dispatch }) => {
@@ -36,13 +41,6 @@ export const fetchsingleCountryInfo = createAsyncThunk(
   },
 );
 
-// export const searchByCountry = (str) => (
-//   {
-//     type: SEARCH_BY_COUNTRY,
-//     str,
-//   }
-// );
-
 export const searchImplementation = (arr, str) => {
   const len = str.length;
 
@@ -50,20 +48,18 @@ export const searchImplementation = (arr, str) => {
   return cases;
 };
 
-const casesReducer = (state = [], action) => {
+const casesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_CASES: {
-      return [...action.payload];
-    }
-    case SEARCH_BY_COUNTRY: {
-      // const arr = state.map((obj) => ({ ...obj }));
-      // const cases = searchImplementation(arr, action.str);
-      // console.log(action.payload);
-      return [...action.payload];
-    }
-    default: {
-      return state;
-    }
+    case FETCH_CASES: return {
+      ...state,
+      all: [...action.payload],
+    };
+    case SEARCH_BY_COUNTRY:
+      return {
+        ...state,
+        filterCountry: action.payload,
+      };
+    default: return state;
   }
 };
 

@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux';
 import style from './css/Menu.module.css';
 
 const Menu = () => {
-  const cases = useSelector((state) => state.cases);
+  const { all } = useSelector((state) => state.cases);
 
-  const totalConfirmed = cases.reduce((sum, country) => sum += country.confirmed, 0);
-  const population = cases.reduce((sum, country) => {
+  const totalConfirmed = all.reduce((sum, country) => sum += country.confirmed, 0);
+  const population = all.reduce((sum, country) => {
     if (country.population === undefined || null) {
       sum += 0;
       return sum;
@@ -17,7 +17,7 @@ const Menu = () => {
     return sum;
   }, 0);
 
-  const deaths = cases.reduce((sum, country) => sum += country.deaths, 0);
+  const deaths = all.reduce((sum, country) => sum += country.deaths, 0);
   return (
     <section className={style.Menu}>
       <h2>All Time Stats</h2>

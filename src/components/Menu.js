@@ -1,4 +1,6 @@
-import { useSelector } from "react-redux";
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
+import { useSelector } from 'react-redux';
 
 import style from './css/Menu.module.css';
 
@@ -11,7 +13,7 @@ const Menu = () => {
       sum += 0;
       return sum;
     }
-    sum += country.population
+    sum += country.population;
     return sum;
   }, 0);
 
@@ -20,12 +22,21 @@ const Menu = () => {
     <section className={style.Menu}>
       <h2>All Time Stats</h2>
       <div>
-      <p>{totalConfirmed}<span>Total confirmed cases</span></p>
-      <p>{population}<span>Population</span></p>
-      <p>{deaths}<span>Total Deaths</span></p>
+        <p>
+          {totalConfirmed}
+          <span>Total confirmed cases</span>
+        </p>
+        <p>
+          {population}
+          <span>Population</span>
+        </p>
+        <p>
+          {deaths}
+          <span>Total Deaths</span>
+        </p>
       </div>
     </section>
-  )
+  );
 };
 
 export default Menu;

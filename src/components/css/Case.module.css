@@ -1,16 +1,23 @@
 .Container {
-  width: 45%;
+  width: 50%;
+  font-size: 1.5em;
   margin: 0 auto;
   height: 10em;
-  display: inline-block;
   border: 1px solid #bbb;
   text-align: right;
+  display: flex;
+  padding: 1em;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.Container a {
-  text-decoration: none;
+.Container button {
+  width: fit-content;
+  background-color: inherit;
+  border: none;
 }
 
-.Container a svg {
+.Container button svg {
   width: 2em;
 }

@@ -26,8 +26,8 @@ export const fetchHomePageCases = createAsyncThunk(
 
 export const fetchsingleCountryInfo = createAsyncThunk(
   SEARCH_BY_COUNTRY,
-  async (args, { dispatch }) => {
-    const response = await fetch('https://covid-api.mmediagroup.fr/v1/cases?country=India');
+  async (countryName, { dispatch }) => {
+    const response = await fetch(`https://covid-api.mmediagroup.fr/v1/cases?country=${countryName}`);
     const data = await response.json();
     dispatch({
       type: SEARCH_BY_COUNTRY,
@@ -36,12 +36,12 @@ export const fetchsingleCountryInfo = createAsyncThunk(
   },
 );
 
-export const searchByCountry = (str) => (
-  {
-    type: SEARCH_BY_COUNTRY,
-    str,
-  }
-);
+// export const searchByCountry = (str) => (
+//   {
+//     type: SEARCH_BY_COUNTRY,
+//     str,
+//   }
+// );
 
 export const searchImplementation = (arr, str) => {
   const len = str.length;
@@ -56,9 +56,10 @@ const casesReducer = (state = [], action) => {
       return [...action.payload];
     }
     case SEARCH_BY_COUNTRY: {
-      const arr = state.map((obj) => ({ ...obj }));
-      const cases = searchImplementation(arr, action.str);
-      return [...cases];
+      // const arr = state.map((obj) => ({ ...obj }));
+      // const cases = searchImplementation(arr, action.str);
+      // console.log(action.payload);
+      return [...action.payload];
     }
     default: {
       return state;

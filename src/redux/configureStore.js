@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 
-import casesReducer from "./covidcases";
+import casesReducer from './covidcases';
 
 const rootReducer = combineReducers({
   cases: casesReducer,
@@ -9,6 +9,6 @@ const rootReducer = combineReducers({
 
 const store = configureStore({
   reducer: rootReducer,
-})
+});
 
 export default store;

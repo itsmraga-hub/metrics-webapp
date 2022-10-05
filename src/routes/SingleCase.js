@@ -9,9 +9,6 @@ const SingleCase = () => {
   const params = useParams();
 
   const { id } = params;
-  // console.log(id);
-
-  // const { filterCountry } = useSelector((state) => state.cases);
 
   const dispatch = useDispatch();
 

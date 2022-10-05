@@ -3,6 +3,7 @@
 # Math Magicians
 
 > Metrics App - A mobile web application to check a list of metrics (numeric values) making use of React and Redux.
+> The application uses the [Covid 19](https://github.com/M-Media-Group/Covid-19-API) API provided by [M-Media-Group](https://github.com/M-Media-Group) on GitHub. It displays information on Covid 19 for the whole world. It also allows users to click on a particular country and view more information on that country on a RewactRouter.
 
 ## Built With
 
@@ -18,7 +19,7 @@
 
 - Deployed to Netlify. Click below link to visit.
 
-- [Live Link](https://)
+- ### [Live Link here](https://fanciful-metrics-webapp.netlify.app/)
 
 ## Getting Started
 
@@ -85,3 +86,5 @@ _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/
 ## CREDITS
 
 - Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) under CC licensing.
+
+- [M-Media-Group](https://github.com/M-Media-Group) for providing the API for use at No cost.

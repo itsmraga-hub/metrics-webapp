@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CasesContainer /> Renders Properly 1`] = `
+<section
+  className="Section"
+>
+  <div
+    className="SearchContainer"
+  >
+    <input
+      className="InputField"
+      id="searchbar"
+      name="search"
+      placeholder="Filter/search by country"
+    />
+  </div>
+  <ul
+    className="Container"
+  />
+</section>
+`;

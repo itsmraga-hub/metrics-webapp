@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable camelcase */
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchsingleCountryInfo } from '../redux/covidcases';
@@ -8,6 +6,8 @@ import style from './css/Case.module.css';
 const Case = (props) => {
   const coun = props;
   const { country, i } = coun;
+
+  // eslint-disable-next-line camelcase
   const { abbreviation, id, life_expectancy } = country;
 
   const dispatch = useDispatch();
@@ -31,6 +31,7 @@ const Case = (props) => {
         <p>
           Life expectancy:
           {' '}
+          {/* eslint-disable-next-line camelcase */}
           {life_expectancy}
         </p>
       </div>

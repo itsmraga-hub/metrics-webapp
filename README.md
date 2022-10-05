@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math Magicians
+# Covid Metrics Web App
 
 > Metrics App - A mobile web application to check a list of metrics (numeric values) making use of React and Redux.
 > The application uses the [Covid 19](https://github.com/M-Media-Group/Covid-19-API) API provided by [M-Media-Group](https://github.com/M-Media-Group) on GitHub. It displays information on Covid 19 for the whole world. It also allows users to click on a particular country and view more information on that country on a RewactRouter.

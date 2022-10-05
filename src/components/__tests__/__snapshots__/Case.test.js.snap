@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Case /> Renders Properly 1`] = `
+<li
+  className="Container odd"
+>
+  <a
+    href="/country/undefined"
+    onClick={[Function]}
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="fa-solid fa-circle-chevron-right fa-2x"
+      />
+    </button>
+  </a>
+  <div>
+    <div>
+      <p />
+      <span />
+    </div>
+    <p>
+      Life expectancy:
+       
+    </p>
+  </div>
+</li>
+`;

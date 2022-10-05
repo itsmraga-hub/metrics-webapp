@@ -1,0 +1,27 @@
+.Menu {
+  width: 100%;
+  text-align: center;
+}
+
+.Menu h2 {
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Menu div {
+  font-size: 1.25em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1em;
+}
+
+.Menu div p {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Menu div p span {
+  font-size: 0.75rem;
+}

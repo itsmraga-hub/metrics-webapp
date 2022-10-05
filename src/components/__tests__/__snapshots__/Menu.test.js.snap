@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> Renders Properly 1`] = `
+<section
+  className="Menu"
+>
+  <h2>
+    All Time Stats
+  </h2>
+  <div>
+    <p>
+      0
+      <span>
+        Total confirmed cases
+      </span>
+    </p>
+    <p>
+      0
+      <span>
+        Population
+      </span>
+    </p>
+    <p>
+      0
+      <span>
+        Total Deaths
+      </span>
+    </p>
+  </div>
+</section>
+`;

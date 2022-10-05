@@ -16,6 +16,7 @@
   width: fit-content;
   background-color: inherit;
   border: none;
+  cursor: pointer;
 }
 
 .Container button svg {

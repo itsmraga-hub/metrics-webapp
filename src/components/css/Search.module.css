@@ -1,0 +1,12 @@
+.SearchContainer {
+  width: 100%;
+  margin: auto;
+}
+
+.InputField {
+  display: block;
+  width: 70%;
+  margin: auto;
+  font-size: 2em;
+  padding: 0.5em;
+}

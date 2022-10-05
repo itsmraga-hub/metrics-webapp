@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar /> Renders Properly 1`] = `
+<div
+  className="SearchContainer"
+>
+  <input
+    className="InputField"
+    id="searchbar"
+    name="search"
+    placeholder="Filter/search by country"
+  />
+</div>
+`;

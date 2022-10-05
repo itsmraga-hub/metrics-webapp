@@ -10,4 +10,7 @@ body {
   overflow-x: hidden;
   font-size: 65%;
   font-family: 'Lato', sans-serif;
+  background-color: #ff82a9;
+  color: #fff;
+  font-weight: bold;
 }

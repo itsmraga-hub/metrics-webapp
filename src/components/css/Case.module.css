@@ -21,3 +21,11 @@
 .Container button svg {
   width: 2em;
 }
+
+.odd {
+  background-color: #c52f5e;
+}
+
+.even {
+  background-color: #eb467a;
+}

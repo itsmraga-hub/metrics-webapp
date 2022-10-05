@@ -5,7 +5,8 @@ const SEARCH_BY_COUNTRY = 'SEARCH_BY_COUNTRY';
 
 const initialState = {
   all: [],
-  filterCountry: {},
+  filterCountry: [],
+  pending: null,
 };
 
 export const fetchHomePageCases = createAsyncThunk(
@@ -34,6 +35,7 @@ export const fetchsingleCountryInfo = createAsyncThunk(
   async (countryName, { dispatch }) => {
     const response = await fetch(`https://covid-api.mmediagroup.fr/v1/cases?country=${countryName}`);
     const data = await response.json();
+    data.All.country = countryName;
     dispatch({
       type: SEARCH_BY_COUNTRY,
       payload: data,
@@ -54,10 +56,17 @@ const casesReducer = (state = initialState, action) => {
       ...state,
       all: [...action.payload],
     };
+    case `${SEARCH_BY_COUNTRY}/pending`:
+      return {
+        ...state,
+        msg: 'Waiting for Data',
+        pending: true,
+      };
     case SEARCH_BY_COUNTRY:
       return {
         ...state,
-        filterCountry: action.payload,
+        filterCountry: [{ ...action.payload }],
+        pending: false,
       };
     default: return state;
   }

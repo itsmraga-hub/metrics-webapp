@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-return-assign */
 import { useSelector } from 'react-redux';
 
 import style from './css/Menu.module.css';

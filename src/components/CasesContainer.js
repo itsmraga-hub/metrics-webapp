@@ -12,9 +12,9 @@ const CasesContainer = (props) => {
       <SearchBar handleChange={handleChange} value={value} />
       <ul className={style.Container}>
         {
-          cases.map((c) => {
+          cases.map((c, i) => {
             const { id } = c;
-            return <Case key={`key-${id}`} country={c} id={id} />;
+            return <Case key={`key-${id}`} country={c} id={id} i={i + 1} />;
           })
         }
       </ul>

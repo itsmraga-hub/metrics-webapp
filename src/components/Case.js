@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable camelcase */
-// import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchsingleCountryInfo } from '../redux/covidcases';
@@ -8,7 +7,7 @@ import style from './css/Case.module.css';
 
 const Case = (props) => {
   const coun = props;
-  const { country } = coun;
+  const { country, i } = coun;
   const { abbreviation, id, life_expectancy } = country;
 
   const dispatch = useDispatch();
@@ -18,10 +17,10 @@ const Case = (props) => {
   };
 
   return (
-    <li className={style.Container}>
+    <li className={`${style.Container} ${i % 4 === 0 || (i - 1) % 4 === 0 ? style.even : style.odd}`}>
       <Link to={{ pathname: `/country/${id}`, state: {} }}>
         <button type="button" id={id} onClick={handleClick}>
-          <i className="fa-solid fa-circle-chevron-right" id={id} />
+          <i className="fa-solid fa-circle-chevron-right fa-2x" id={id} />
         </button>
       </Link>
       <div>

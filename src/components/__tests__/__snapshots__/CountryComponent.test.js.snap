@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CountryComponent /> Renders Properly 1`] = `
+<div
+  className="AwaitContainer"
+>
+  <h1>
+    Fetching data...
+  </h1>
+</div>
+`;
